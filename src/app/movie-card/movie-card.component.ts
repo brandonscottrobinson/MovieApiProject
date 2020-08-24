@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MovieInfoService } from '../movie-info.service';
 
 @Component({
   selector: 'app-movie-card',
@@ -7,7 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MovieCardComponent implements OnInit {
   @Input() movieRef: any;
-  constructor() {}
+  constructor(private image: MovieInfoService) {}
 
   ngOnInit(): void {}
+
+  // getImages()
 }
