@@ -1,5 +1,7 @@
 <div>
-  <p>{{ movieRef.title }};</p>
+  <p>{{ movieRef.title }}</p>
+  <img src="https://image.tmdb.org/t/p/w154{{ movieRef.poster_path }}" />
   <p>{{ movieRef.release_date }}</p>
-  <!-- <img src="{{ gifRef.images.original.url }}" alt="" /> -->
+  <p>{{ movieRef.vote_average }}</p>
+  <button>Add to Favorites</button>
 </div>

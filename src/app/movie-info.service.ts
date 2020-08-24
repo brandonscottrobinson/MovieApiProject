@@ -6,8 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MovieInfoService {
   baseUrlMovies: string = 'https://api.themoviedb.org/3/discover/movie';
-  baseUrlSearch: string = 'https://api.themoviedb.org/3/search/company?';
+  // baseUrlSearch: string = 'https://api.themoviedb.org/3/search/company?';
   baseUrlGenre: string = 'https://api.themoviedb.org/3/genre/movie/list';
+  baseUrlImage: string = 'https://api.themoviedb.org/3/configuration';
   key: string = '594792bbaf56e905471ed7af3e967aca';
 
   constructor(private http: HttpClient) {}
