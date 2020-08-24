@@ -1,0 +1,7 @@
+<form #movieForm="ngForm" (ngSubmit)="searchMovie(movieForm)">
+  <label for="searchTerm">Movie Search</label>
+  <input type="text" id="searchTerm" name="searchTerm" ngModel />
+  <!-- searchTerm refering to searchTerm in Service -->
+  <label for="releaseYear">Year Search</label>
+  <input type="number" id="releaseYear" name="releaseYear" ngModel />
+</form>
