@@ -8,9 +8,17 @@ import { MovieInfoService } from '../movie-info.service';
 })
 export class MovieCardComponent implements OnInit {
   @Input() movieRef: any;
-  constructor(private image: MovieInfoService) {}
+  favorites: any = [];
+  isFavorite: boolean = false;
+
+  constructor(private movieServ: MovieInfoService) {}
 
   ngOnInit(): void {}
 
-  // getImages()
+  addMovieToFavorites = (movie) => {
+    if (this.isFavorite === false) {
+      this.isFavorite = true;
+      this.movieServ.addMovieToFavorites(movie);
+    }
+  };
 }

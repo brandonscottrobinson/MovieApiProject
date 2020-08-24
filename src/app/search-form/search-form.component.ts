@@ -17,8 +17,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   searchMovie = (form: NgForm) => {
-    console.log(form);
-
+    // console.log(form);
     this.router.navigate(['movie'], {
       queryParams: {
         releaseYear: form.value.releaseYear,
@@ -30,7 +29,6 @@ export class SearchFormComponent implements OnInit {
 
   getGenres = () => {
     this.movieServ.getGenres().subscribe((response) => {
-      console.log(response);
       this.genres = response.genres;
     });
   };

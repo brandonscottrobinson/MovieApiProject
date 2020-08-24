@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MovieInfoService } from '../movie-info.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-favs-list',
@@ -6,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favs-list.component.css'],
 })
 export class FavsListComponent implements OnInit {
-  constructor() {}
+  favorites: any = [];
+  constructor(
+    private movieServ: MovieInfoService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getFavorites();
+  }
+
+  getFavorites = () => {
+    this.favorites = this.movieServ.getFavorites();
+  };
 }

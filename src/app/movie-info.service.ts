@@ -10,6 +10,7 @@ export class MovieInfoService {
   baseUrlGenre: string = 'https://api.themoviedb.org/3/genre/movie/list';
   baseUrlImage: string = 'https://api.themoviedb.org/3/configuration';
   key: string = '594792bbaf56e905471ed7af3e967aca';
+  favorites: any = [];
 
   constructor(private http: HttpClient) {}
 
@@ -34,6 +35,15 @@ export class MovieInfoService {
         api_key: this.key,
       },
     });
+  };
+
+  addMovieToFavorites = (movie) => {
+    this.favorites.push(movie);
+    console.log(this.favorites);
+  };
+
+  getFavorites = () => {
+    return this.favorites;
   };
 }
 

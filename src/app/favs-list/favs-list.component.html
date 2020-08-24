@@ -1,1 +1,7 @@
-<p>favs-list works!</p>
+<button routerLink="/movie-list">Back Home</button>
+<div *ngFor="let favorite of favorites">
+  <p>{{ favorite.title }}</p>
+  <img src="https://image.tmdb.org/t/p/w154{{ favorite.poster_path }}" />
+  <p>{{ favorite.release_date }}</p>
+  <p>{{ favorite.vote_average }}</p>
+</div>

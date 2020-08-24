@@ -28,9 +28,8 @@ export class MovieListComponent implements OnInit {
       this.movieServ
         .getData(ourRelease, ourAverage, ourGenre)
         .subscribe((response) => {
-          console.log(response);
+          // console.log(response);
           this.movies = response.results;
-          //form.value.ourRelease
         });
     });
   };
