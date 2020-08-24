@@ -1,7 +1,26 @@
 <form #movieForm="ngForm" (ngSubmit)="searchMovie(movieForm)">
-  <label for="searchTerm">Movie Search</label>
-  <input type="text" id="searchTerm" name="searchTerm" ngModel />
+  <label for="votingAverage">Voting Search</label>
+  <select name="votingAverage" id="votingAverage" ngModel>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  <!-- <input type="text" id="votingAverage" name="votingAverage" ngModel /> -->
   <!-- searchTerm refering to searchTerm in Service -->
   <label for="releaseYear">Year Search</label>
   <input type="number" id="releaseYear" name="releaseYear" ngModel />
+  <label for="genre">Select a genre:</label>
+  <select name="genre" id="genre" ngModel>
+    <option *ngFor="let genre of genres" value="{{ genre.id }}">{{
+      genre.name
+    }}</option>
+  </select>
+  <button>Search</button>
 </form>

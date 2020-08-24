@@ -22,14 +22,16 @@ export class MovieListComponent implements OnInit {
   }
   getMovies = () => {
     this.route.queryParamMap.subscribe((params) => {
-      console.log(params.get('searchTerm'));
-      let ourTitle = params.get('searchTerm');
       let ourRelease = params.get('releaseYear');
-      this.movieServ.getData(ourTitle, ourRelease).subscribe((response) => {
-        console.log(response);
-        this.movies = response.results;
-        //form.value.ourRelease
-      });
+      let ourAverage = params.get('votingAverage');
+      let ourGenre = params.get('genre');
+      this.movieServ
+        .getData(ourRelease, ourAverage, ourGenre)
+        .subscribe((response) => {
+          console.log(response);
+          this.movies = response.results;
+          //form.value.ourRelease
+        });
     });
   };
 }

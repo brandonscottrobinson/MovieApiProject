@@ -1,3 +1,4 @@
+import { MovieInfoService } from './../movie-info.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,18 +9,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-form.component.css'],
 })
 export class SearchFormComponent implements OnInit {
-  constructor(private router: Router) {}
+  genres: any;
+  constructor(private router: Router, private movieServ: MovieInfoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getGenres();
+  }
 
   searchMovie = (form: NgForm) => {
     console.log(form);
 
     this.router.navigate(['movie'], {
       queryParams: {
-        searchTerm: form.value.ourTitle,
-        releaseYear: form.value.ourRelease,
+        releaseYear: form.value.releaseYear,
+        votingAverage: form.value.votingAverage,
+        genre: form.value.genre,
       },
+    });
+  };
+
+  getGenres = () => {
+    this.movieServ.getGenres().subscribe((response) => {
+      console.log(response);
+      this.genres = response.genres;
     });
   };
 }
