@@ -1,10 +1,14 @@
-<button routerLink="/favs-list">Favs List</button>
+<app-header></app-header>
+
 <app-search-form></app-search-form>
-<app-movie-card
-  *ngFor="let film of movies; index as i"
-  (showInfo)="showDetails(i)"
-  [movieRef]="film"
-></app-movie-card>
+
+<div class="movies-in-a-row">
+  <app-movie-card
+    *ngFor="let film of movies; index as i"
+    (showInfo)="showDetails(i)"
+    [movieRef]="film"
+  ></app-movie-card>
+</div>
 
 <div *ngIf="showIndex >= 0" class="pop-up-container" (click)="hideDetails()">
   <div class="movie-pop-up">

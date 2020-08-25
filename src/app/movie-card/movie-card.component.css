@@ -1,0 +1,18 @@
+p {
+  margin: 0;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+
+  flex-wrap: wrap;
+  width: 154px;
+  height: 342px;
+  padding: 20px;
+}
+.title-container {
+  flex-wrap: wrap;
+}
+.pic-container {
+  width: 154px;
+}
