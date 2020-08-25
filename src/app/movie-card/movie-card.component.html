@@ -1,10 +1,13 @@
-<div>
-  <p>{{ movieRef.title }}</p>
+<div class="card-container">
+  <!-- <p class="title-container">{{ movieRef.title }}</p> -->
+  <button (click)="addMovieToFavorites(movieRef)">Add to Favorites</button>
   <img
+    class="pic-container"
     src="https://image.tmdb.org/t/p/w154{{ movieRef.poster_path }}"
     (click)="toggleMovie()"
   />
+  <p class="title-container">{{ movieRef.title }}</p>
   <p>Year Released: {{ movieRef.release_date | date: "yyyy" }}</p>
   <p>Vote Average:{{ movieRef.vote_average }}</p>
-  <button (click)="addMovieToFavorites(movieRef)">Add to Favorites</button>
+  <!-- <button (click)="addMovieToFavorites(movieRef)">Add to Favorites</button> -->
 </div>

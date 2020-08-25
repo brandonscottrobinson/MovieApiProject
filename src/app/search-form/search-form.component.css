@@ -1,0 +1,15 @@
+.search-form {
+  display: flex;
+  flex-direction: column;
+}
+.button {
+  margin-top: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

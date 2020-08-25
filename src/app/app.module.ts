@@ -9,6 +9,7 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { FavsListComponent } from './favs-list/favs-list.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { FavsCardComponent } from './favs-card/favs-card.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FavsCardComponent } from './favs-card/favs-card.component';
     FavsListComponent,
     MovieCardComponent,
     FavsCardComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
