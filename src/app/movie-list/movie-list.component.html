@@ -1,3 +1,18 @@
 <button routerLink="/favs-list">Favs List</button>
 <app-search-form></app-search-form>
-<app-movie-card *ngFor="let film of movies" [movieRef]="film"></app-movie-card>
+<app-movie-card
+  *ngFor="let film of movies; index as i"
+  (showInfo)="showDetails(i)"
+  [movieRef]="film"
+></app-movie-card>
+
+<div *ngIf="showIndex >= 0" class="pop-up-container" (click)="hideDetails()">
+  <div class="movie-pop-up">
+    <p>{{ movies[showIndex].title }}</p>
+    <img
+      src="https://image.tmdb.org/t/p/w300{{ movies[showIndex].backdrop_path }}"
+    />
+    <p>Year Released: {{ movies[showIndex].release_date | date: "yyyy" }}</p>
+    <p class="overview">Overview:{{ movies[showIndex].overview }}</p>
+  </div>
+</div>

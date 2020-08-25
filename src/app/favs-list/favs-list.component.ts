@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MovieInfoService } from '../movie-info.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FavsListComponent implements OnInit {
   favorites: any = [];
+  showIndex: number;
   constructor(
     private movieServ: MovieInfoService,
     private route: ActivatedRoute
@@ -20,5 +21,15 @@ export class FavsListComponent implements OnInit {
 
   getFavorites = () => {
     this.favorites = this.movieServ.getFavorites();
+    console.log(this.favorites);
+  };
+
+  showDetails = (index: number) => {
+    this.showIndex = index;
+    console.log(this.showIndex);
+  };
+
+  hideDetails = () => {
+    this.showIndex = -1;
   };
 }

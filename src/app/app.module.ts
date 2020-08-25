@@ -8,6 +8,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { FavsListComponent } from './favs-list/favs-list.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { FavsCardComponent } from './favs-card/favs-card.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     MovieListComponent,
     FavsListComponent,
     MovieCardComponent,
+    FavsCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
