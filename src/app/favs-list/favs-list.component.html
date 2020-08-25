@@ -1,7 +1,20 @@
-<button routerLink="/movie-list">Back Home</button>
-<div *ngFor="let favorite of favorites">
-  <p>{{ favorite.title }}</p>
-  <img src="https://image.tmdb.org/t/p/w154{{ favorite.poster_path }}" />
-  <p>{{ favorite.release_date }}</p>
-  <p>{{ favorite.vote_average }}</p>
+<button routerLink="/movie">Back Home</button>
+
+<app-favs-card
+  *ngFor="let favorite of favorites; index as i"
+  [favsRef]="favorite"
+  (showInfo)="showDetails(i)"
+></app-favs-card>
+
+<div *ngIf="showIndex >= 0" class="pop-up-container" (click)="hideDetails()">
+  <div class="movie-pop-up">
+    <p>{{ favorites[showIndex].title }}</p>
+    <img
+      src="https://image.tmdb.org/t/p/w300{{
+        favorites[showIndex].backdrop_path
+      }}"
+    />
+    <p>Year Released: {{ favorites[showIndex].release_date | date: "yyyy" }}</p>
+    <p class="overview">Overview:{{ favorites[showIndex].overview }}</p>
+  </div>
 </div>

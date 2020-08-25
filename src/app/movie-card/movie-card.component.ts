@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MovieInfoService } from '../movie-info.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { MovieInfoService } from '../movie-info.service';
 })
 export class MovieCardComponent implements OnInit {
   @Input() movieRef: any;
+  @Output() showInfo = new EventEmitter<any>();
   favorites: any = [];
   isFavorite: boolean = false;
 
@@ -20,5 +21,9 @@ export class MovieCardComponent implements OnInit {
       this.isFavorite = true;
       this.movieServ.addMovieToFavorites(movie);
     }
+  };
+
+  toggleMovie = () => {
+    this.showInfo.emit();
   };
 }

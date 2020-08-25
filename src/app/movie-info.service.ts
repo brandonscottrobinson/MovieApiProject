@@ -29,6 +29,15 @@ export class MovieInfoService {
     });
   };
 
+  getDefaultData = (votingAverage: string): any => {
+    return this.http.get(this.baseUrlMovies, {
+      params: {
+        api_key: this.key,
+        ['vote_average.gte']: votingAverage,
+      },
+    });
+  };
+
   getGenres = (): any => {
     return this.http.get(this.baseUrlGenre, {
       params: {
@@ -44,6 +53,10 @@ export class MovieInfoService {
 
   getFavorites = () => {
     return this.favorites;
+  };
+
+  deleteFavorite = (index: number) => {
+    this.favorites.splice(index, 1);
   };
 }
 

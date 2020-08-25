@@ -1,7 +1,10 @@
 <div>
   <p>{{ movieRef.title }}</p>
-  <img src="https://image.tmdb.org/t/p/w154{{ movieRef.poster_path }}" />
-  <p>{{ movieRef.release_date }}</p>
-  <p>{{ movieRef.vote_average }}</p>
+  <img
+    src="https://image.tmdb.org/t/p/w154{{ movieRef.poster_path }}"
+    (click)="toggleMovie()"
+  />
+  <p>Year Released: {{ movieRef.release_date | date: "yyyy" }}</p>
+  <p>Vote Average:{{ movieRef.vote_average }}</p>
   <button (click)="addMovieToFavorites(movieRef)">Add to Favorites</button>
 </div>
