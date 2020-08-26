@@ -1,10 +1,12 @@
-<div>
-  <p>{{ favsRef.title }}</p>
+<div class="card-container">
+  <button class="button" (click)="deleteFavorite(favsRef)">
+    <span class="material-icons"> remove_circle_outline </span>
+  </button>
   <img
     src="https://image.tmdb.org/t/p/w154{{ favsRef.poster_path }}"
     (click)="toggleMovie()"
   />
+  <p>{{ favsRef.title }}</p>
   <p>Year Released: {{ favsRef.release_date | date: "yyyy" }}</p>
   <p>Vote Average: {{ favsRef.vote_average }}</p>
-  <button (click)="deleteFavorite(favsRef)">Remove From Favorites</button>
 </div>

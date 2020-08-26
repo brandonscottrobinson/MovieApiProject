@@ -1,0 +1,38 @@
+p {
+  margin: 0;
+}
+.card-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-wrap: wrap;
+  width: 154px;
+  height: 342px;
+  padding: 20px;
+}
+
+.pic-container {
+  width: 154px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  outline: none;
+  color: whitesmoke;
+}
+.button:hover {
+  opacity: 1;
+}
+.material-icons {
+  text-decoration: none;
+  cursor: pointer;
+}
+.material-icons:hover {
+  color: red;
+  transition: ease-in-out 0.2s;
+}

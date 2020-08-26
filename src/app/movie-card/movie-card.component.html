@@ -1,6 +1,8 @@
 <div class="card-container">
   <!-- <p class="title-container">{{ movieRef.title }}</p> -->
-  <button (click)="addMovieToFavorites(movieRef)">Add to Favorites</button>
+  <button class="button" (click)="addMovieToFavorites(movieRef)">
+    <span class="material-icons"> add_circle_outline </span>
+  </button>
   <img
     class="pic-container"
     src="https://image.tmdb.org/t/p/w154{{ movieRef.poster_path }}"
