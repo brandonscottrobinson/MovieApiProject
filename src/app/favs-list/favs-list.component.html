@@ -3,6 +3,7 @@
 </button>
 
 <app-favs-card
+  class="movies-in-a-row"
   *ngFor="let favorite of favorites; index as i"
   [favsRef]="favorite"
   (showInfo)="showDetails(i)"

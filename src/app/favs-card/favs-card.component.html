@@ -5,6 +5,8 @@
   <img
     src="https://image.tmdb.org/t/p/w154{{ favsRef.poster_path }}"
     (click)="toggleMovie()"
+    title="Click for movie description!"
+    class="pic-container"
   />
   <p>{{ favsRef.title }}</p>
   <p>Year Released: {{ favsRef.release_date | date: "yyyy" }}</p>
